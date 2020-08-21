@@ -1,0 +1,20 @@
+{
+  "name": "alejandro-buendia",
+  "description": "Componente Polymer de Alejandro Buendia Escamilla",
+  "main": "alejandro-buendia.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "paper-progress": "https://github.com/PolymerElements/paper-progress.git#2.1.1",
+    "paper-card": "https://github.com/PolymerElements/paper-card.git#2.1.0",
+    "paper-alert-dialog": "https://github.com/Collaborne/paper-alert-dialog.git#2.0.2",
+    "paper-input": "https://github.com/PolymerElements/paper-input.git#2.2.3"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  }
+}

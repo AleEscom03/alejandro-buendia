@@ -1,0 +1,76 @@
+<link rel="import" href="../polymer/polymer-element.html" />
+<link rel="import" href="../paper-progress/paper-progress.html" />
+<link rel="import" href="../paper-card/paper-card.html" />
+<link rel="import" href="../paper-alert-dialog/paper-alert-dialog.html" />
+<link rel="import" href="../paper-input/paper-input.html" />
+
+<dom-module id="alejandro-buendia">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background-color: cornflowerblue;
+      }
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      button{
+        border: none;
+        padding: 10px;
+        background-color: darkcyan;
+        color: white;
+        cursor: pointer;
+        transition: 300ms all;
+      }
+      button:hover{
+          transform: scale(1.2);
+      }
+    </style>
+    <h2>Componente: [[prop1]]</h2>
+    <paper-card heading="alejandro-buendia" image="https://www.arsys.es/blog/wp-content/uploads/2016/09/Polymer.jpg" alt="Emmental">
+      <div class="card-content">
+        Componente card importado de
+        https://github.com/PolymerElements/paper-card.git.
+      </div>
+      <div class="card-actions">
+        <paper-input id="inputp" label="Escribe tu nombre y pulsa el botón."></paper-input>
+        <button on-click="showAlert">Listo</button>
+        <paper-alert-dialog id="dialog" title="Felicitaciones!!" dismiss-button="Cancelar" confirm-button="OK" on-confirm="confirm" on-dismiss="dismiss">
+          Felicitaciones!!! Aquí puedes mostrar mensajes o notificaciones al usuario cuando se requieran.
+          <paper-progress indeterminate></paper-progress>
+        </paper-alert-dialog>
+      </div>
+    </paper-card>
+  </template>
+
+  <script>
+    /**
+     * `alejandro-buendia`
+     * Componente Polymer de Alejandro Buendia Escamilla
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class AlejandroBuendia extends Polymer.Element {
+      static get is() {
+        return "alejandro-buendia";
+      }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: "alejandro-buendia",
+          },
+        };
+      }
+
+      showAlert(){
+        this.$.dialog.title = this.$.inputp.value;
+        this.$.dialog.open();
+      }
+    }
+
+    window.customElements.define(AlejandroBuendia.is, AlejandroBuendia);
+  </script>
+</dom-module>
