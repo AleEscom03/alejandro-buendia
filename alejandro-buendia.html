@@ -25,6 +25,10 @@
       button:hover{
           transform: scale(1.2);
       }
+      .card{
+        padding: 10px;
+        margin: 10px;
+      }
     </style>
     <h2>Componente: [[prop1]]</h2>
     <paper-card heading="alejandro-buendia" image="https://www.arsys.es/blog/wp-content/uploads/2016/09/Polymer.jpg" alt="Emmental">
@@ -41,6 +45,22 @@
         </paper-alert-dialog>
       </div>
     </paper-card>
+    <hr>
+    <paper-card class="card" heading="Titulo inline">
+      <paper-input label="label inline" value="Valor inline"></paper-input>
+      <paper-button>Aceptar</paper-button>
+    </paper-card>
+
+    <paper-card class="card" heading="[[propTitle]]">
+      <paper-input label="[[propLabel]]" value="[[propValueInput]]"></paper-input>
+      <paper-button>[[propValueInput]]</paper-button>
+    </paper-card>
+
+    <paper-card class="card" heading="{{propValue}}">
+      <paper-input label="{{propValue}}" value="{{propValue}}"></paper-input>
+      <paper-button>Aceptar</paper-button>
+    </paper-card>
+    <br>
   </template>
 
   <script>
@@ -62,6 +82,24 @@
             type: String,
             value: "alejandro-buendia",
           },
+          propTitle:{
+            type: String,
+            value: "Titulo desde propiedad"
+          },
+          propLabel:{
+            type: String,
+            value: "Label desde propiedad"
+          },
+          propValueInput:{
+            type: String,
+            value: "Valor desde propiedad",
+            notify: true
+          },
+          propValue:{
+            type: String,
+            value: "Valor desde propiedad",
+            notify: true
+          }
         };
       }
 
