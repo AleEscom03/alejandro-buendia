@@ -10,6 +10,7 @@
       :host {
         display: block;
         background-color: cornflowerblue;
+        @apply --alejandro-buendia;
       }
       h2 {
         font-family: Arial, Helvetica, sans-serif;
@@ -26,9 +27,58 @@
           transform: scale(1.2);
       }
       .card{
-        padding: 10px;
-        margin: 10px;
+          padding: 10px;
+          margin: 10px;
       }
+      paper-card.card1{
+        --paper-card:{
+          background-color: #38c7a6;
+          color:white;
+        }
+      }
+
+      paper-card.card2{
+        --paper-card:{
+          background-color: #009959;
+        }
+      }
+
+      paper-card.card3{
+        --paper-card:{
+          background-color: #c2c358;
+        }
+      }
+
+      paper-button.btn1{
+        --paper-button:{
+          background-color: cornflowerblue;
+          color:white;
+        }
+      }
+      paper-button.btn2{
+        --paper-button:{
+          background-color: #3bb525;
+          color:white;
+        }
+      }
+      paper-button.btn3{
+        --paper-button:{
+          background-color: #f16679;
+          color:white;
+        }
+      }
+      paper-input{
+        --paper-input-container-input:{
+            color:white;
+        }
+        --paper-input-container-label:{
+          color:white;
+        }
+        --paper-input-container-label-focus:{
+          color:black;
+        }
+      }
+
     </style>
     <h2>Componente: [[prop1]]</h2>
     <paper-card heading="alejandro-buendia" image="https://www.arsys.es/blog/wp-content/uploads/2016/09/Polymer.jpg" alt="Emmental">
@@ -45,20 +95,21 @@
         </paper-alert-dialog>
       </div>
     </paper-card>
+
     <hr>
-    <paper-card class="card" heading="Titulo inline">
-      <paper-input label="label inline" value="Valor inline"></paper-input>
-      <paper-button>Aceptar</paper-button>
+    <paper-card class="card card1" heading="Titulo inline">
+      <paper-input class="in1" label="label inline" value="Valor inline"></paper-input>
+      <paper-button class="btn1">Aceptar</paper-button>
     </paper-card>
 
-    <paper-card class="card" heading="[[propTitle]]">
+    <paper-card class="card card2" heading="[[propTitle]]">
       <paper-input label="[[propLabel]]" value="[[propValueInput]]"></paper-input>
-      <paper-button>[[propValueInput]]</paper-button>
+      <paper-button class="btn2">[[propValueInput]]</paper-button>
     </paper-card>
 
-    <paper-card class="card" heading="{{propValue}}">
+    <paper-card class="card card3" heading="{{propValue}}">
       <paper-input label="{{propValue}}" value="{{propValue}}"></paper-input>
-      <paper-button>Aceptar</paper-button>
+      <paper-button class="btn3">Aceptar</paper-button>
     </paper-card>
     <br>
   </template>
